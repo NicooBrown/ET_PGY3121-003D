@@ -1,3 +1,7 @@
 .logoimg {
     width: 200px;
   }
+
+.btn.btn-light {
+    margin-left: 15px;
+  }
