@@ -5,3 +5,40 @@
 .btn.btn-light {
     margin-left: 15px;
   }
+
+#footer h6, p, span, a{
+    color: whitesmoke;
+  }
+
+#copyrightid\ {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+.textcopyright {
+    margin-right: 5px;
+  }
+
+.acopyright {
+    text-decoration: none;
+    color: #00a7e1;
+  }
+
+#sliderow{
+  margin-bottom: 50px;
+
+}
+
+#secondrow{
+  margin-bottom: 50px;
+  background-color:#2b3035;
+}
+
+#colcard {
+  display: flex !important;
+  justify-content: center  !important;
+  align-items: center !important;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
