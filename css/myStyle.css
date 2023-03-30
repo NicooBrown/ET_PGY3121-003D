@@ -54,3 +54,11 @@
 .bi.bi-git:hover {
   color: #00a7e1;
 }
+
+.carousel-inner {
+  max-height: 650px;
+}
+
+#containercontacto {
+  margin-top: 50px;
+}
