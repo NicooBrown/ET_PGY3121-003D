@@ -60,5 +60,29 @@
 }
 
 #containercontacto {
-  margin-top: 50px;
+  max-width: 1000px;
+  padding-top: 70px;
+  padding-bottom: 50px;
 }
+
+#containercontacto h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.form-label {
+  color: whitesmoke;
+
+}
+
+#buttform {
+  /* margin-left: 870px; */
+  padding: 10px 30px;
+
+}
+
+
