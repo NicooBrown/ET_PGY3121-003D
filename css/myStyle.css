@@ -25,14 +25,13 @@
     color: #00a7e1;
   }
 
-#sliderow{
-  margin-bottom: 50px;
-
-}
 
 #secondrow{
-  margin-bottom: 50px;
   background-color:#2b3035;
+}
+
+#secondrow p {
+  color: #5d5d5d;
 }
 
 #colcard {
@@ -41,4 +40,17 @@
   align-items: center !important;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.me-4 {
+  color: whitesmoke;
+
+}
+
+.bi.bi-instagram:hover {
+  color: #00a7e1;
+}
+
+.bi.bi-git:hover {
+  color: #00a7e1;
 }
