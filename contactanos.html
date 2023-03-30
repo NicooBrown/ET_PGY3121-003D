@@ -154,14 +154,14 @@
                         <div class="col">
 
                             <label class="form-label">Nombre</label>
-                            <input type="text" class="form-control" placeholder="Primer nombre" name="email">
+                            <input type="text" class="form-control" placeholder="Primer nombre" name="nombre" required>
 
                         </div>
 
                         <div class="col">
 
                             <label class="form-label">Apellido</label>
-                            <input type="text" class="form-control" placeholder="Primer apellido" name="email">
+                            <input type="text" class="form-control" placeholder="Primer apellido" name="apellido" required>
 
                         </div>
 
@@ -171,14 +171,14 @@
 
                         <div class="col">
                             <label class="form-label">Correo Electronico</label>
-                            <input type="text" class="form-control" placeholder="ejemplo@dominio.cl" name="email">
+                            <input type="email" class="form-control" placeholder="ejemplo@dominio.cl" name="email" required>
 
                         </div>
 
                         <div class="col">
 
                             <label class="form-label">Número de telefono</label>
-                            <input type="number" class="form-control" placeholder="56 9 1234 5678" name="phone">
+                            <input type="number" class="form-control" placeholder="56 9 1234 5678" name="phone" required>
 
                         </div>
 
@@ -187,11 +187,11 @@
                     <div class="row mt-4">
 
                         <label class="form-label">Comentarios</label>
-                        <textarea class="form-control" rows="5"></textarea>
+                        <textarea class="form-control" rows="5"></textarea required>
 
                     </div>
 
-                    <div class="container-sm">
+                    <div class="col" style="text-align: right;">
 
                         <button type="submit" id="buttform" class="btn btn-outline-light mt-5">Enviar</button>
 
