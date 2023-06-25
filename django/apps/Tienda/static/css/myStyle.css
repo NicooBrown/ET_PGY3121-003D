@@ -1,0 +1,104 @@
+#logonav {
+  width: 150px;
+}
+
+.btn.btn-light {
+    margin-left: 15px;
+  }
+
+#footer h6, p, span, a{
+    color: whitesmoke;
+  }
+
+#copyrightid\ {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  } 
+
+.textcopyright {
+    margin-right: 5px;
+  }
+
+.acopyright {
+    text-decoration: none;
+    color: #00a7e1;
+  }
+
+
+#secondrow{
+  background-color:#2b3035;
+}
+
+#secondrow p {
+  color: #5d5d5d;
+}
+
+#colcard {
+  display: flex !important;
+  justify-content: center  !important;
+  align-items: center !important;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.me-4 {
+  color: whitesmoke;
+
+}
+
+.bi.bi-instagram:hover {
+  color: #00a7e1;
+}
+
+.bi.bi-git:hover {
+  color: #00a7e1;
+}
+
+.carousel-inner {
+  max-height: 650px;
+}
+
+#containercontacto {
+  max-width: 1000px;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
+#containercontacto h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.form-label {
+  color: whitesmoke;
+
+}
+
+#buttform {
+  padding: 10px 30px;
+
+}
+
+@media (min-width: 1025px) {
+  .h-custom {
+  height: 100vh !important;
+  }
+  }
+
+.card p {
+    color: #2b3035;
+  }
+
+.card {
+  background-color:aquamarine;
+}
+
+#container1 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
