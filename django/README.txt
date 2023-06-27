@@ -1,3 +1,8 @@
+INTEGRANTES:
+NICOLÁS GATICA
+ALEX HERNANDEZ
+JOAQUIN VEGA
+
 Hay códigos que deje realizados pero no funcionando como por ejemplo el del carrito de compras ya que no me dejo hacerlo funcionar
 agregue path, url, settings.py y no me dejo, quizás algo elimine y se me olvidó pero igualmente deje comentado lo del carrito ya que no me dejo, me tiraba el siguiente error:
 
