@@ -1,0 +1,37 @@
+#api-container ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#api-container li {
+    margin: 10px;
+    text-align: center;
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: #fff;
+}
+
+#api-container h3 {
+    margin: 5px 0;
+}
+
+#api-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }

@@ -1,7 +1,11 @@
-ngatica
+admin
 ngatica002@gmail.com
-N1c0l4sg0509$$
+adminAccount0509
 ----------------
 co-admin
 nic.gatica@duocuc.cl
 proyectoDjango0509
+----------------
+usuario no admin
+user: nicoobrown
+pass: noesAdmin0509

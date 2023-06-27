@@ -2,69 +2,124 @@
 
 {% load static %}
 
+{% load humanize %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/myStyle.css' %}">
+{% endblock %}
+
 {% block title %} Agregar producto {% endblock %}
+
 
 {% block body %}
 <div class="container mt-5 mb-5">
-    <h2 class="mb-5">Agregar producto</h2>
-    <form id="formProductoAgregar" action="/agregarProd" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    <h2 class="mb-5" style="font-weight: 600;">Agregar producto</h2>
+    <hr>
+    <form id="formProductoAgregar" action="/agregarProd" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="row">
             <div class="col-md-4">
                 <label for="txtSku">SKU:</label>
                 <input name="txtSku" id="txtSku" type="text" class="form-control">
+                {% if form.errors.txtSku %}
+                    <ul class="errorlist">
+                        {% for error in form.errors.txtSku %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
-            
 
             <div class="col-md-8">
                 <label for="txtNombre">Nombre:</label>
                 <input name="txtNombre" id="txtNombre" type="text" class="form-control">
+                {% if form.errors.txtNombre %}
+                    <ul class="errorlist">
+                        {% for error in form.errors.txtNombre %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
-
 
             <div class="col-md-4">
                 <label for="txtPrecio">Precio:</label>
                 <input name="txtPrecio" id="txtPrecio" type="text" class="form-control">
+                {% if form.errors.txtPrecio %}
+                    <ul class="errorlist">
+                        {% for error in form.errors.txtPrecio %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
-
 
             <div class="col-md-4">
                 <label for="cmbCategoria">Categoria:</label>
                 <select name="cmbCategoria" class="form-select" aria-label="Default select example">
                     <option disabled selected value="null">Seleccione</option>
                     {% for c in cate %}
-                    <option value="{{c.id_categoria}}">{{c.nombre_categoria}}</option>
+                        <option value="{{ c.id_categoria }}">{{ c.nombre_categoria }}</option>
                     {% endfor %}
-                  </select>
+                </select>
+                {% if form.errors.cmbCategoria %}
+                    <ul class="errorlist">
+                        {% for error in form.errors.cmbCategoria %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
-
 
             <div class="col-md-4">
                 <label for="txtStock">Stock:</label>
                 <input name="txtStock" id="txtStock" type="text" class="form-control">
+                {% if form.errors.txtStock %}
+                    <ul class="errorlist">
+                        {% for error in form.errors.txtStock %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
-
 
             <div class="col-md-12">
                 <label for="txtDescripcion">Descripción:</label>
                 <input name="txtDescripcion" id="txtDescripcion" type="text" class="form-control">
+                {% if form.errors.txtDescripcion %}
+                    <ul class="errorlist">
+                        {% for error in form.errors.txtDescripcion %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
-
 
             <div class="col-md-12">
                 <label for="txtImg">Imagen URL:</label>
                 <input name="txtImg" id="txtImg" type="file" class="form-control">
+                {% if form.errors.txtImg %}
+                    <ul class="errorlist">
+                        {% for error in form.errors.txtImg %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
         </div>
         <button class="btn btn-success mt-3">Agregar producto</button>
     </form>
+
 </div>
 
+<hr>
 
 <!-- LISTA DE PRODUCTOS -->
 
 <div class="container mt-5">
-    <h3>Listado de productos</h3>
-    <table class="table">
+    <h3 style="font-weight: 600;">Listado de productos</h3>
+    <hr>
+    <table class="table table-striped table-responsive-sm">
         <thead>
           <tr>
             <th scope="col">SKU</th>
@@ -80,26 +135,51 @@
         <tbody>
             {% for i in prod %}
           <tr>
-            <th scope="row">{{i.id_producto}}</th>
-            <td><img src="{{i.img_url.url}}" alt="" height="50"></td>
-            <td>{{i.nombre}}</td>
-            <td>{{i.precio}}</td>
-            <td>{{i.descripcion}}</td>
-            <td>{{i.categoria_id}}</td>
-            <td>{{i.stock}}</td>
+            <th scope="row">{{ i.id_producto }}</th>
+            <td><img src="{{ i.img_url.url }}" alt="" height="50"></td>
+            <td>{{ i.nombre }}</td>
+            <td>${{ i.precio | intcomma}}</td>
+            <td>{{ i.descripcion }}</td>
+            <td>{{ i.categoria_id }}</td>
+            <td>{{ i.stock }}</td>
+
+            
             <td>
-                <a href="/editarProducto/{{i.id_producto}}" class="btn btn-primary">Editar</a>
+                <a href="/editarProducto/{{ i.id_producto }}" class="btn btn-primary" >Editar</a>
             </td>
+        
+            
             <td>
-                <a href="/eliminarProducto/{{i.id_producto}}" class="btn btn-danger">Eliminar</a>
-            </td>
+                <a href="/eliminarProducto/{{ i.id_producto }}" class="btn btn-danger" onclick="eliminarProducto">Eliminar</a>
+              </td>
+              
+        
+
           </tr>
           {% endfor %}
         </tbody>
       </table>
 </div>
+<br>
+<br>
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'js/editarForm.js' %}"></script>
+<script>
+  function eliminarProducto(id) {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Esta acción no se puede deshacer",
+      icon: "question",
+      showCancelButton: true
+    }).then(function (result) {
+      if (result.isConfirmed) {
+        var url = "/eliminarProducto/" + id;
+        window.location.href = url;
+      }
+    });
+  }
+</script>
 {% endblock %}
+
+

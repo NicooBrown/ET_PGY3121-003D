@@ -1,0 +1,46 @@
+{% extends "./base.html" %}
+{% load static %}
+
+
+
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Form.css' %}">
+{% endblock %}
+
+{% block title %} Contactanos {% endblock %}
+
+{% block body %}
+
+
+<div id="secondrow" class="container-fluid">
+
+    <div class="container-sm" id="containercontacto">
+
+        <h2>CONTACTANOS</h2>
+
+        <form action="" class="formulario_contacto" method="post">
+
+            {% csrf_token %}
+
+            <div class="row">
+
+            {{ form }}
+
+            </div>
+
+            <div class="col" style="text-align: right;">
+
+                <button type="submit" id="buttform" class="btn btn-outline-light mt-5">Enviar</button>
+
+            </div>
+        </form>
+        {{ mensaje }}
+    </div>
+
+</div>
+
+
+
+{% endblock %}

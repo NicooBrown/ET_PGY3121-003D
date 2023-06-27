@@ -1,0 +1,31 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ApiStyle.css' %}">
+{% endblock %}
+
+{% block title %} API {% endblock %}
+
+{% block body %}
+
+<div id="api-container" class="container">
+    <h1>API CONSUMIDA</h1>
+    <hr>    
+    <ul>
+        {% for personaje in personajes %}
+        <li>
+            <h3>{{ personaje.nombre }}</h3>
+            <img src="{{ personaje.imagen }}" alt="{{ personaje.nombre }}">
+            <p><strong>Especie:</strong> {{ personaje.especie }}</p>
+            <p><strong>Estado:</strong> {{ personaje.estado }}</p>
+            <p><strong>Género:</strong> {{ personaje.genero }}</p>
+            <p><strong>Origen:</strong> {{ personaje.origen }}</p>
+            <p><strong>Ubicación:</strong> {{ personaje.ubicacion }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

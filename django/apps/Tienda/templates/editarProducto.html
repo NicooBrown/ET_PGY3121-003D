@@ -1,4 +1,9 @@
 {% extends './base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/myStyle.css' %}">
+{% endblock %}
 
 {% block title %} Editar producto {% endblock %}
 
@@ -55,8 +60,17 @@
             </div>
         </div>
         <button class="btn btn-success mt-3">Editar producto</button>
+        <a href="/agregarProducto" class="btn btn-danger mt-3" id="cancelarBtn">Cancelar</a>
     </form>
 </div>
 
+<script>
+    document.getElementById('cancelarBtn').addEventListener('click', function(event) {
+        event.preventDefault();
+        if (confirm('¿Estás seguro que deseas cancelar la edición?')) {
+            window.location.href = this.getAttribute('href');
+        }
+    });
+</script>
 
 {% endblock %}

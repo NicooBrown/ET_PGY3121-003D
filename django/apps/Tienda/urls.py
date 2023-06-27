@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.contrib import messages
+
 
 
 urlpatterns = [
@@ -9,6 +11,8 @@ urlpatterns = [
     path('editarProducto/<id>',views.cargarEditarProducto),
     path('editarProductoForm',views.editarProducto),
     path('eliminarProducto/<id>',views.eliminarProducto),
-    path('carrito',views.carritoVentas)
+    path('contactanos',views.cargarContactanos),
+    path('registro',views.registro),
+    path('api/', views.api),
     
 ]
